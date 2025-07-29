@@ -1,3 +1,4 @@
+/* ===== Reset & Base ===== */
 * {
     margin: 0;
     padding: 0;
@@ -11,6 +12,7 @@ body {
     overflow-x: hidden;
 }
 
+/* ===== Header and Navigation ===== */
 header {
     background: rgba(10, 15, 35, 0.8);
     backdrop-filter: blur(10px);
@@ -68,6 +70,7 @@ nav {
     width: 100%;
 }
 
+/* ===== Hero Section ===== */
 .hero {
     height: 100vh;
     display: flex;
@@ -106,6 +109,25 @@ nav {
     text-shadow: 0 0 20px rgba(0, 219, 222, 0.3);
 }
 
+.cta-link {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #00dbde, #fc00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(0, 219, 222, 0.3);
+    text-decoration: none;
+    margin-top: 1rem;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cta-link:hover {
+    filter: brightness(1.2);
+    transform: scale(1.05);
+}
+
 .hero p {
     font-size: 1.5rem;
     max-width: 800px;
@@ -131,6 +153,7 @@ nav {
     box-shadow: 0 10px 25px rgba(0, 219, 222, 0.4);
 }
 
+/* ===== Generic Section ===== */
 section {
     padding: 5rem 10%;
 }
@@ -154,6 +177,7 @@ section {
     border-radius: 2px;
 }
 
+/* ===== Games Grid ===== */
 .games-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -215,6 +239,7 @@ section {
     font-size: 0.8rem;
 }
 
+/* ===== Video Section ===== */
 .videos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -226,25 +251,26 @@ section {
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    border: 3px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(45deg, #00dbde, #fc00ff);
 }
 
 .video-container {
     position: relative;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    width: 100%;
+    padding-top: 0;
+    border-radius: 15px 15px 0 0;
+    overflow: hidden;
 }
 
-.video-placeholder {
-    position: absolute;
-    top: 0;
-    left: 0;
+.video-container video {
     width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, #0f3460, #1a1a2e);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #00dbde;
-    font-size: 3rem;
+    height: auto;
+    display: block;
+    border-radius: 15px 15px 0 0;
 }
 
 .video-info {
@@ -262,6 +288,7 @@ section {
     line-height: 1.6;
 }
 
+/* ===== Experience Timeline ===== */
 .experience-timeline {
     position: relative;
     max-width: 800px;
@@ -324,89 +351,97 @@ section {
     height: 20px;
     background: linear-gradient(45deg, #00dbde, #fc00ff);
     border-radius: 50%;
-    top: 30px;
-    z-index: 1;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.timeline-item:nth-child(odd)::after {
-    right: -10px;
+/* ===== Certificates Section ===== */
+.certificates-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.timeline-item:nth-child(even)::after {
-    left: -10px;
+.certificate-card {
+    background: rgba(30, 30, 50, 0.7);
+    padding: 1.5rem 2rem;
+    border-radius: 15px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+    border-image: linear-gradient(45deg, #00dbde, #fc00ff) 1;
 }
 
+.certificate-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 219, 222, 0.3);
+}
+
+.certificate-card h3 {
+    color: #00dbde;
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+}
+
+.certificate-card a {
+    color: #fc00ff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.certificate-card a:hover {
+    color: #ffffff;
+}
+
+/* ===== Contact Section ===== */
 .contact {
     text-align: center;
-    background: rgba(10, 15, 35, 0.8);
-    padding: 5rem 10%;
+    margin-top: 2rem;
+}
+
+.contact p {
+    font-size: 1.2rem;
+    color: #c0c0c0;
+    margin-bottom: 2rem;
 }
 
 .contact-icons {
     display: flex;
     justify-content: center;
     gap: 2rem;
-    margin-top: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
 }
 
 .contact-icon {
-    width: 70px;
-    height: 70px;
+    color: #00dbde;
+    font-size: 2rem;
+    background: rgba(30, 30, 50, 0.7);
+    padding: 1rem;
     border-radius: 50%;
-    background: linear-gradient(45deg, #00dbde, #fc00ff);
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
-    color: white;
-    transition: all 0.3s ease;
 }
 
 .contact-icon:hover {
-    transform: translateY(-10px) scale(1.1);
-    box-shadow: 0 10px 25px rgba(0, 219, 222, 0.4);
+    background: linear-gradient(45deg, #00dbde, #fc00ff);
+    color: white;
+    transform: scale(1.1);
 }
 
-footer {
-    text-align: center;
-    padding: 2rem;
-    background: rgba(5, 10, 25, 0.9);
-    color: #c0c0c0;
+.email-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
 }
 
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1.2rem;
-    }
-
-    .experience-timeline::before {
-        left: 31px;
-    }
-
-    .timeline-item {
-        width: 100%;
-        padding-left: 70px;
-        padding-right: 25px;
-        left: 0 !important;
-    }
-
-    .timeline-item:nth-child(even)::after {
-        left: 21px;
-    }
-
-    .timeline-item::after {
-        left: 21px;
-    }
-
-    .videos-grid {
-        grid-template-columns: 1fr;
-    }
-}
