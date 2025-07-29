@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Jacobo Arcaya - Game Developer Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 </head>
 <body>
     <header>
@@ -15,6 +18,7 @@
                 <a href="#games">Games</a>
                 <a href="#videos">Videos</a>
                 <a href="#experience">Experience</a>
+                <a href="#certificates">certificates</a>
                 <a href="#contact">Contact</a>
             </div>
         </nav>
@@ -23,7 +27,7 @@
     <section class="hero">
         <h1>Game Developer</h1>
         <p>Specialized in creating immersive and unique playable experiences. Explore my portfolio of games, videos, and professional experience.</p>
-        <button class="cta-button">My Work</button>
+        <a href="#games" class="cta-link">My Work</a>
     </section>
 
     <!-- Section Games -->
@@ -33,9 +37,9 @@
 
             <!-- Ninja Shadow -->
             <div class="game-card">
-                <a href="https://jacobo1313.itch.io/ninja-shadow" target="_blank">
+                <a href="https://jacobo1313.itch.io/ninja-shadow" target="_blank" rel="noopener noreferrer">
                     <div class="game-image">
-                        <img src="ninja-shadow.jpeg" width="350px" height="200px" alt="">
+                        <img src="ninja-shadow.jpeg" width="350" height="200" alt="Ninja Shadow" />
                     </div>
                     <div class="game-info">
                         <h3>Ninja Shadow</h3>
@@ -50,9 +54,9 @@
 
             <!-- Loopbird -->
             <div class="game-card">
-                <a href="https://jacobo1313.itch.io/loopbird1" target="_blank">
+                <a href="https://jacobo1313.itch.io/loopbird1" target="_blank" rel="noopener noreferrer">
                     <div class="game-image">
-                        <img src="loopbird.jpeg" width="350px" height="200px" alt="">
+                        <img src="loopbird.jpeg" width="350" height="200" alt="Loopbird" />
                     </div>
                     <div class="game-info">
                         <h3>Loopbird</h3>
@@ -66,7 +70,7 @@
 
             <!-- Lost in the Jungle -->
             <div class="game-card">
-                <a href="https://play.google.com/store/apps/details?id=com.Jacoboaxy.LITJ" target="_blank">
+                <a href="https://play.google.com/store/apps/details?id=com.Jacoboaxy.LITJ" target="_blank" rel="noopener noreferrer">
                     <div class="game-image">
                         <i class="fas fa-jungle"></i>
                     </div>
@@ -84,34 +88,44 @@
     </section>
     <!-- End Section Games -->
 
+    <!-- Section Videos -->
     <section id="videos">
         <h2 class="section-title">Gameplay Videos</h2>
         <div class="videos-grid">
+
+            <!-- Video Loopbird -->
             <div class="video-card">
                 <div class="video-container">
-                    <div class="video-placeholder">
-                        <i class="fas fa-play-circle"></i>
-                    </div>
+                    <video controls width="100%">
+                        <source src="loopbird.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
                 <div class="video-info">
                     <h3>Loopbird - Gameplay</h3>
                     <p>Strategy game.</p>
                 </div>
             </div>
+
+            <!-- Video Ninja Shadow -->
             <div class="video-card">
                 <div class="video-container">
-                    <div class="video-placeholder">
-                        <i class="fas fa-play-circle"></i>
-                    </div>
+                    <video controls width="100%">
+                        <source src="ninja.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
                 <div class="video-info">
                     <h3>Ninja Shadow - Official Trailer</h3>
                     <p>Action role-playing game in a world of dynamic combat Action 2D.</p>
                 </div>
             </div>
+
         </div>
     </section>
+    <!-- End Section Videos -->
 
+    <!-- Section Experience -->
     <section id="experience">
         <h2 class="section-title">Professional Experience</h2>
         <div class="experience-timeline">
@@ -138,7 +152,29 @@
             </div>
         </div>
     </section>
+    <!-- End Section Experience -->
 
+    <!-- Section Certificates -->
+    <section id="certificates">
+        <h2 class="section-title">my certificates</h2>
+        <div class="certificates-list">
+            <div class="certificate-card">
+                <h3>Unity Developer</h3>
+                <a href="https://www.domestika.org/es/certificates/4f85aea990694809a8107d975c677fc8" target="_blank" rel="noopener noreferrer">Ver certificado</a>
+            </div>
+            <div class="certificate-card">
+                <h3>Low poly</h3>
+                <a href="https://www.domestika.org/es/certificates/a0722ccd6dc2b13560b67b70fb1726e7" target="_blank" rel="noopener noreferrer">Ver certificado</a>
+            </div>
+            <div class="certificate-card">
+                <h3>Foundation of cybersecurity</h3>
+                <a href="https://www.coursera.org/account/accomplishments/verify/WFU5W8DH1H52" target="_blank" rel="noopener noreferrer">Ver certificado</a>
+            </div>
+        </div>
+    </section>
+    <!-- End Section Certificates -->
+
+    <!-- Section Contact -->
     <section id="contact" class="contact">
         <h2 class="section-title">Contact</h2>
         <p>Interested in collaborating or learning more about my work?</p>
@@ -154,6 +190,7 @@
             </button>
         </div>
     </section>
+    <!-- End Section Contact -->
 
     <footer>
         <p>&copy; 2025 Jacobo Arcaya. All rights reserved.</p>
