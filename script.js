@@ -1,29 +1,25 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const ctaButton = document.querySelector('.cta-button');
-    const gamesSection = document.querySelector('#games');
-    
-    ctaButton.addEventListener('click', function() {
-        gamesSection.scrollIntoView({ behavior: 'smooth' });
-    });
-    
+document.addEventListener('DOMContentLoaded', function () {
+    // Smooth scroll para todos los <a href="#...">
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
         });
     });
 
     // Email button
-    const emailBtn = document.querySelector('.email-btn');
-    if (emailBtn) {
-        emailBtn.addEventListener('click', () => {
-            const email = emailBtn.dataset.email;
-            if (navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText(email).catch(() => {});
-            }
-            alert(`My email is: ${email} (copied to clipboard)`);
+    const emailBtns = document.querySelectorAll('.email-btn');
+    emailBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            const email = btn.getAttribute('data-email');
+            alert(`My email is: ${email}`);
         });
-    }
+    });
+
+    // Ya no necesitas esto si no usás .cta-button
+    // const ctaButton = document.querySelector('.cta-button');
+    // const gamesSection = document.querySelector('#games');
 });
